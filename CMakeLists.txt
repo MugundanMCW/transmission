@@ -543,8 +543,9 @@ if(NOT USE_SYSTEM_NATPMP)
             NATPMP_STATICLIB)
 endif()
 
-if(WIN32)
+if(MSVC)
     # https://github.com/miniupnp/miniupnp/pull/304
+    # (MinGW already gets the 'lib' prefix from CMAKE_STATIC_LIBRARY_PREFIX)
     set(TR_MINIUPNPC_LIBNAME libminiupnpc)
 else()
     set(TR_MINIUPNPC_LIBNAME miniupnpc)
